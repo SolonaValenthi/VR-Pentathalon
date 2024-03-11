@@ -1346,7 +1346,7 @@ GameObject:
   - component: {fileID: 169547238}
   - component: {fileID: 169547237}
   - component: {fileID: 169547236}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14936,7 +14936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 1007509663}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -17291,7 +17291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 1007509663}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -18594,7 +18594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 1007509663}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -23363,7 +23363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 1007509663}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
