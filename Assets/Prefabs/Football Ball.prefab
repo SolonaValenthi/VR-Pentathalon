@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8588466395717918390}
   - component: {fileID: 4339287590598441338}
   - component: {fileID: 4810290823127212036}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Football Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
