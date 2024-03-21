@@ -17,7 +17,7 @@ public class RocketBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+        transform.Translate(Vector3.right * _speed * Time.deltaTime);
     }
 
     IEnumerator DestroyTimer()
@@ -28,7 +28,6 @@ public class RocketBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("test");
         if (other.CompareTag("Target") || other.CompareTag("Ground"))
             DestroyThisWithExplosion();
     }
