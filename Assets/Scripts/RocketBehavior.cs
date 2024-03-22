@@ -8,16 +8,30 @@ public class RocketBehavior : MonoBehaviour
     [SerializeField] float _timer = 2f;
     [SerializeField] GameObject _explosionPrefab;
 
+    private bool _grabbed = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(DestroyTimer());
+        StartCoroutine("DestroyTimer");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!_grabbed)
+            RocketMovement();
+    }
+
+    private void RocketMovement()
+    {
         transform.Translate(Vector3.right * _speed * Time.deltaTime);
+    }
+
+    public void Grabbed()
+    {
+        _grabbed = true;
+        StopCoroutine("DestroyTimer");
     }
 
     IEnumerator DestroyTimer()
