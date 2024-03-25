@@ -9,6 +9,6 @@ public class Pocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localPosition = _mainCamera.localPosition / 2;
+        transform.localPosition -= _mainCamera.localPosition / 2;
     }
 }
