@@ -45,26 +45,26 @@ public class ExcavatorController : MonoBehaviour
         if (_armRotDirection < 0 && _arm.transform.rotation.eulerAngles.z > _armMinLimit)
             _arm.transform.Rotate(Vector3.forward, _armRotDirection * _equipRotSpeed * Time.deltaTime);
 
-        if (_arm.transform.rotation.eulerAngles.z > 350)
-            _arm.transform.rotation = Quaternion.Euler(0,0,_armMinLimit+.01f);
-        else if (_arm.transform.rotation.eulerAngles.z > _armMaxLimit)
-            _arm.transform.rotation = Quaternion.Euler(0, 0, _armMaxLimit-.01f);
+        if (_arm.transform.localRotation.eulerAngles.z < _armMinLimit)
+            _arm.transform.localRotation = Quaternion.Euler(0,0,_armMinLimit+.01f);
+        else if (_arm.transform.localRotation.eulerAngles.z > _armMaxLimit)
+            _arm.transform.localRotation = Quaternion.Euler(0, 0, _armMaxLimit-.01f);
 
         //Rotate Cab
         if (_cabRotDirection != 0)
             _cab.transform.Rotate(Vector3.up, _cabRotDirection * _equipRotSpeed * Time.deltaTime);
 
-        //Rotate/Lift Arm
+        //Rotate/Lift Bucket
         if (_bucketRotDirection > 0 && _bucket.transform.rotation.eulerAngles.z < _bucketMaxLimit)
-            _bucket.transform.Rotate(Vector3.forward, _bucketRotDirection * _equipRotSpeed * Time.deltaTime);
+            _bucket.transform.Rotate(Vector3.forward, _bucketRotDirection * (_equipRotSpeed * 2) * Time.deltaTime);
 
         if (_bucketRotDirection < 0 && _bucket.transform.rotation.eulerAngles.z > _bucketMinLimit)
-            _bucket.transform.Rotate(Vector3.forward, _bucketRotDirection * _equipRotSpeed * Time.deltaTime);
+            _bucket.transform.Rotate(Vector3.forward, _bucketRotDirection * (_equipRotSpeed * 2) * Time.deltaTime);
 
-        if (_bucket.transform.rotation.eulerAngles.z > 350)
-            _bucket.transform.rotation = Quaternion.Euler(0, 0, _bucketMinLimit + .01f);
-        else if (_bucket.transform.rotation.eulerAngles.z > _bucketMaxLimit)
-            _bucket.transform.rotation = Quaternion.Euler(0, 0, _bucketMaxLimit - .01f);
+        if (_bucket.transform.localRotation.eulerAngles.z < _bucketMinLimit)
+            _bucket.transform.localRotation = Quaternion.Euler(0, 0, _bucketMinLimit + .01f);
+        else if (_bucket.transform.localRotation.eulerAngles.z > _bucketMaxLimit)
+            _bucket.transform.localRotation = Quaternion.Euler(0, 0, _bucketMaxLimit - .01f);
     }
 
     public void MoveForward(float direction)
@@ -83,19 +83,25 @@ public class ExcavatorController : MonoBehaviour
 
     public void MoveArm(float direction)
     {
-        if ((direction <= -0.1) || (direction >= -0.1))
+        if ((direction <= -0.1) || (direction >= 0.1))
             _armRotDirection = direction;
+        else
+            _armRotDirection = 0;
     }
 
     public void RotateCab(float direction)
     {
-        if ((direction <= -0.1) || (direction >= -0.1))
+        if ((direction <= -0.1) || (direction >= 0.1))
             _cabRotDirection = direction;
+        else
+            _cabRotDirection = 0;
     }
 
     public void RotateBucket(float direction)
     {
-        if ((direction <= -0.1) || (direction >= -0.1))
+        if ((direction <= -0.1) || (direction >= 0.1))
             _bucketRotDirection = direction;
+        else
+            _bucketRotDirection = 0;
     }
 }
